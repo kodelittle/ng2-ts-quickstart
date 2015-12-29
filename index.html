@@ -1,0 +1,40 @@
+<html>
+
+<head>
+<title>Angular 2 QuickStart</title>
+
+
+<!-- 1. Load libraries -->
+<!-- Angular 2 relies on some ES2015 features. For some browsers you need to add this explicitly.  -->
+<script src="node_modules/es6-shim/es6-shim.js"></script>
+
+<!-- We configure something called System and ask it to import the boot file we just wrote. -->
+<script src="node_modules/systemjs/dist/system.src.js"></script>
+
+<!-- We load the JavaScript libraries we need. angular2-polyfills.js and Rx.js are needed by Angular 2. -->
+<script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+<script src="node_modules/rxjs/bundles/Rx.js"></script>
+<script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+
+<!-- 2. Configure SystemJS -->
+<script>
+	System.config({
+		packages : {
+			app : {
+				format : 'register',
+				defaultExtension : 'js'
+			}
+		}
+	});
+	
+	/* Something has to find and load our application modules. */
+	System.import('app/boot').then(null, console.error.bind(console));
+</script>
+
+</head>
+
+<!-- 3. Display the application -->
+<body>
+	<my-app>Loading...</my-app>
+</body>
+</html>
